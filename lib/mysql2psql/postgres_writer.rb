@@ -54,7 +54,8 @@ class Mysql2psql
         "real"
       when "decimal"
         default = " DEFAULT #{column[:default].nil? ? 'NULL' : column[:default]}" if default
-        "numeric(#{column[:length] || 10}, #{column[:decimals] || 0})"
+        #"numeric(#{column[:length] || 10}, #{column[:decimals] || 0})"
+        "real"
 
       when "double precision"
         default = " DEFAULT #{column[:default].nil? ? 'NULL' : column[:default]}" if default
